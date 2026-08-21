@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Economic Pressure Map | Decision Support Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="app-container" class="app-container">
+
+        <!------------ DISCLAIMER BANNER ------------>
+
+        <section id="disclaimer-banner" class="disclaimer-banner" role="region" aria-label="Governance and Data Ethics Notice">
+            <div class="badge-wrapper">
+                <span class="icon-holder">
+                    &#x1F6E1;&#xFE0F;
+                </span>
+                <strong>Data & Governance Notice</strong>
+                <p class="notice-text">
+                    Predictions represent exploratory estimates derived from a survey sample of 514 Pakistani students.  The system does not provide clinical, financial, or individualized diagnoses.  It serves solely for pattern discovery and institutional decision support. 
+                </p>
+            </div>
+        </section>
+
+        <!------------ HEADER (i.e. TITLE + SUBTITLE) ------------>
+
+        <header id="main-header" class="main-header">
+            <h1>Student Economic Pressure Map</h1>
+            <p class="lead-subtitle">
+                A Responsible Decision-Support Tool for Analyzing Socioeconomic Strain Across Student Cohorts.
+            </p>
+        </header>
+
+        <!------------ MAIN CONTENT ------------>
+
+        <main id="main-content">
+            <h2>Student Socioeconomic Profile</h2>
+            <p>
+                Configure the student cohort profile across the key indicator areas to explore estimated baseline vulnerability levels and decision rules.
+            </p>
+            <section id="survey-section" class="survey-card">
+                <form id="prediction-form" novalidate>
+                    <div class="dropdown">
+                        <label for="internet-cost">How much does the cost of internet/data affect your educational activities?</label>
+                        <select id="internet-cost" name="internet-cost">
+                            <option value="">-- Select an option --</option>
+                            <option value="Not at all">Not at all</option>
+                            <option value="A little">A little</option>
+                            <option value="Moderately">Moderately</option>
+                            <option value="A lot">A lot</option>
+                        </select>
+                    </div>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

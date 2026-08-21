@@ -1,0 +1,61 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Inter, system-ui, -apple-system, sans-serif;
+
+}
+
+#app-container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 24px 16px
+}
+
+.disclaimer-banner {
+    color: #92400E;
+    background-color: #FEF3C7;
+    border: 1px solid #F59E0B;
+    border-radius: 10px;
+    padding: 16px 20px;
+    line-height: 1.5;
+    font-size: 0.9rem;
+}
+.badge-wrapper {
+    text-align: center;
+}
+
+.notice-text {
+    text-align: left;
+}
+
+.main-header {
+    margin-top: 24px;
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.02rem;
+}
+
+.lead-subtitle {
+    font-size: 1.05rem;
+    color: #64748B;
+    max-width: 650px;
+    margin: auto;
+}
+
+
+/* Dark mode override */
+@media (prefers-color-scheme: dark) {
+  .disclaimer-banner {
+    background-color: #78350F22; 
+    border-color: #D97706;       
+    color: #D97706;              
+  }
+}
