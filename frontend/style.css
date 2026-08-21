@@ -46,10 +46,108 @@ h1 {
 .lead-subtitle {
     font-size: 1.05rem;
     color: #64748B;
-    max-width: 650px;
+    max-width: 800px;
     margin: auto;
 }
 
+.survey-card {
+    background-color: #1E293B;
+    border: 1px solid darkcyan;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 20px;
+} 
+
+.survey-card h2, .survey-card p {
+    color: white;
+    margin-top: 0;
+    text-align: center;
+}
+
+.survey-card p {
+    margin-bottom: 30px;
+}
+
+#prediction-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+#prediction-form .dropdown {
+  flex: 0 0 calc(50% - 0.75rem);
+  box-sizing: border-box;
+}
+
+
+#prediction-form .dropdown select,
+#prediction-form .dropdown label {
+  width: 100%;
+  display: block;
+}
+
+
+
+#prediction-form .dropdown label {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: white;
+  margin-bottom: 10px;
+}
+
+select {
+    cursor: pointer;
+    padding: 10px 14px;
+    background-color: #0F172A;
+    color: #F8FAFC;
+    border: 1px solid darkcyan;
+    border-radius: 10px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+#prediction-form .dropdown input,
+#prediction-form .dropdown select {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+}
+
+#prediction-form .dropdown input:focus,
+#prediction-form .dropdown select:focus {
+  border-color: #3B82F6; /* blue */
+  box-shadow: 0 0 0 3px #14B8A6; /* focus ring */
+}
+
+#submit-btn {
+    flex: 0 0 100%;
+    padding: 15px 24px;
+    font-size: 1.125rem; 
+    font-weight: 600; 
+    color: #0F172A; 
+    background-color: #14B8A6;
+    border: 1px solid #0D9488; 
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+#submit-btn:hover {
+    color: #FFFFFF; 
+    background-color: #0D9488; 
+    border-color: #0F766E; 
+    box-shadow: 0 4px 12px rgba(20, 184, 166, 0.25); 
+    transform: translateY(-2px); /* a bit more lift */
+}
+
+#submit-btn:active {
+    color: #FFFFFF;
+    background-color: #0F766E; 
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* ------------------- FOR HANDLING RESPONSIVENESS ------------------- */
 
 /* Dark mode override */
 @media (prefers-color-scheme: dark) {
@@ -57,5 +155,11 @@ h1 {
     background-color: #78350F22; 
     border-color: #D97706;       
     color: #D97706;              
+  }
+}
+
+@media (max-width: 768px) {
+  #prediction-form .dropdown {
+    flex: 0 0 100%;
   }
 }

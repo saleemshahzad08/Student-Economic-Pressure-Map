@@ -37,27 +37,64 @@
         <!------------ MAIN CONTENT ------------>
 
         <main id="main-content">
-            <h2>Student Socioeconomic Profile</h2>
-            <p>
-                Configure the student cohort profile across the key indicator areas to explore estimated baseline vulnerability levels and decision rules.
-            </p>
+
             <section id="survey-section" class="survey-card">
+                <h2>Student Socioeconomic Profile</h2>
+                <p>
+                    Set up student cohort profiles to estimate baseline vulnerability and decision rules
+                </p>
                 <form id="prediction-form" novalidate>
                     <div class="dropdown">
-                        <label for="internet-cost">How much does the cost of internet/data affect your educational activities?</label>
-                        <select id="internet-cost" name="internet-cost">
-                            <option value="">-- Select an option --</option>
+                        <label for="internet-cost">How much does internet/data cost affect your studies?</label>
+                        <select id="internet-cost" name="internet-cost" required>
+                            <option value="">-- Select internet cost burden --</option>
                             <option value="Not at all">Not at all</option>
                             <option value="A little">A little</option>
                             <option value="Moderately">Moderately</option>
                             <option value="A lot">A lot</option>
                         </select>
                     </div>
+
+                    <div class="dropdown">
+                        <label for="device-strain">How much does device access affect your studies?</label>
+                        <select id="device-strain" name="device-strain" required>
+                            <option value="">-- Select device accessibility strain --</option>
+                            <option value="Not at all">Not at all</option>
+                            <option value="A little">A little</option>
+                            <option value="Moderately">Moderately</option>
+                            <option value="A lot">A lot</option>
+                        </select>
+                    </div>
+
+                    <div class="dropdown">
+                        <label for="work-motivation">If you currently work, what is the main reason?</label>
+                        <select id="work-motivation" name="work-motivation" required>
+                            <option value="">-- Select 'Not Applicable' if not working --</option>
+                            <option value="Education Cost">Education Cost</option>
+                            <option value="Family Support">Family Support</option>
+                            <option value="Future savings / Other">Future savings / Other</option>
+                            <option value="Personal expenses">Personal expenses</option>
+                            <option value="Not Applicable">Not Applicable</option>
+                        </select>
+                    </div>
+
+                    <div class="dropdown">
+                        <label for="institutional-improvement">What would most help you focus on education?</label>
+                        <select id="institutional-improvement" name="institutional-improvement" required>
+                            <option value="">-- Select institutional improvement area --</option>
+                            <option value="Better career guidance">Better career guidance</option>
+                            <option value="Better learning resources">Better learning resources</option>
+                            <option value="Greater financial stability">Greater financial stability</option>
+                            <option value="More flexible study arrangements">More flexible study arrangements</option>
+                        </select>
+                    </div>
+
+                    <button id="submit-btn" type="submit">Generate Cohort Estimate</button>
                 </form>
             </section>
         </main>
     </div>
 
-    <script src="script.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
