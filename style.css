@@ -288,6 +288,7 @@ select {
     border: 1px solid #334155;
     border-radius: 10px;
     overflow: hidden;
+    margin-top: 24px;
     margin-bottom: 24px;
     transition: border-color 0.2s ease;
 }
@@ -439,6 +440,250 @@ select {
     vertical-align: middle;
     flex-shrink: 0;
 }
+
+/* ==========================================================================
+   Methodology Documentation Styles
+   ========================================================================== */
+
+.subpage-nav {
+    margin-bottom: 24px;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #14B8A6;
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.back-link:hover {
+    color: #2DD4BF;
+    transform: translateX(-3px);
+}
+
+.methodology-header {
+    text-align: left;
+    margin-bottom: 28px;
+}
+
+.methodology-header h1 {
+    font-size: 2.1rem;
+    line-height: 1.25;
+    color: #F8FAFC;
+}
+
+.doc-section {
+    background-color: #1E293B;
+    border: 1px solid #334155;
+    border-radius: 14px;
+    padding: 28px;
+    margin-bottom: 24px;
+}
+
+.doc-section h2 {
+    color: #14B8A6;
+    font-size: 1.3rem;
+    margin-top: 0;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 10px;
+}
+
+.doc-section p {
+    color: #CBD5E1;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+.doc-list {
+    margin: 0 0 16px 0;
+    padding-left: 20px;
+    color: #CBD5E1;
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+.doc-list li {
+    margin-bottom: 8px;
+}
+
+.doc-list code,
+.doc-section code {
+    font-family: ui-monospace, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.85em;
+    background-color: #0F172A;
+    color: #38BDF8;
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid #334155;
+}
+
+/* Meta Grid Matrix */
+.meta-matrix-card {
+    background-color: #0F172A;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+}
+
+.meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.meta-label {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #94A3B8;
+    font-weight: 600;
+}
+
+.meta-val {
+    font-size: 0.95rem;
+    color: #F8FAFC;
+    font-weight: 700;
+}
+
+/* Formula Box */
+.formula-box {
+    background-color: #0F172A;
+    border: 1px solid #334155;
+    border-left: 4px solid #14B8A6;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 16px 0;
+    text-align: center;
+}
+
+.formula-box code {
+    color: #F8FAFC;
+    font-size: 1rem;
+    background: transparent;
+    border: none;
+}
+
+/* Tertile Cards */
+.tertile-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+    margin: 16px 0;
+}
+
+.tertile-card {
+    background-color: #0F172A;
+    padding: 16px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.tertile-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #94A3B8;
+}
+
+.tertile-card strong {
+    font-size: 1rem;
+    color: #F8FAFC;
+}
+
+.tertile-share {
+    font-size: 0.8rem;
+    color: #64748B;
+}
+
+.border-low { border-top: 3px solid #14B8A6; }
+.border-mod { border-top: 3px solid #F59E0B; }
+.border-high { border-top: 3px solid #EF4444; }
+
+/* Callout Box */
+.callout-box {
+    background-color: rgba(14, 165, 233, 0.08);
+    border: 1px solid #0EA5E9;
+    border-radius: 8px;
+    padding: 16px;
+    margin-top: 16px;
+}
+
+.callout-box strong {
+    color: #38BDF8;
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+}
+
+.callout-box p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #E2E8F0;
+}
+
+/* Tables */
+.table-wrapper {
+    overflow-x: auto;
+    margin: 16px 0;
+    border: 1px solid #334155;
+    border-radius: 8px;
+}
+
+.doc-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    text-align: left;
+}
+
+.doc-table th,
+.doc-table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #334155;
+}
+
+.doc-table th {
+    background-color: #0F172A;
+    color: #94A3B8;
+    font-weight: 600;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.doc-table td {
+    color: #CBD5E1;
+}
+
+.doc-table tr:last-child td {
+    border-bottom: none;
+}
+
+.doc-table tr.highlight-row {
+    background-color: rgba(245, 158, 11, 0.1);
+}
+
+.doc-table tr.highlight-row td {
+    color: #FEF3C7;
+    font-weight: 600;
+}
+
+
 /* ------------------- FOR HANDLING RESPONSIVENESS ------------------- */
 
 /* Dark mode override */

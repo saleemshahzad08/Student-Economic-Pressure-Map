@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Methodology | Student Economic Pressure Map</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+</head>
+<body>
+
+    <div id="app-container" class="app-container">
+
+        <!------------ TOP NAVIGATION & BACK BUTTON ------------>
+        <nav class="subpage-nav">
+            <a href="index.html" class="back-link">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Back to Decision-Support Tool
+            </a>
+        </nav>
+
+        <!------------ METHODOLOGY HEADER ------------>
+        <header class="main-header methodology-header">
+            <h1>Research Methodology & Empirical Machine Learning Framework</h1>
+            <p class="lead-subtitle">
+                An Empirical, Transparent, and Responsible Study on Higher Education in Punjab, Pakistan.
+            </p>
+        </header>
+
+        <!------------ MAIN DOCUMENTATION CONTENT ------------>
+        <main id="main-content" class="methodology-content">
+
+            <!-- Study Overview Matrix -->
+            <section class="card-container meta-matrix-card">
+                <div class="meta-grid">
+                    <div class="meta-item">
+                        <span class="meta-label">Geographic Scope</span>
+                        <strong class="meta-val">Punjab, Pakistan</strong>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Sample Size</span>
+                        <strong class="meta-val">N = 514 Valid Respondents</strong>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Primary Metric</span>
+                        <strong class="meta-val">Multiclass Macro F1</strong>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Primary Estimator</span>
+                        <strong class="meta-val">Constrained Decision Tree (Entropy, Depth 4)</strong>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 1: Research Context & Instrument Design -->
+            <section class="card-container doc-section">
+                <h2>1. Research Context, Sampling & Instrument Design</h2>
+                <p>
+                    Undergraduate and postgraduate students in developing economies face multidimensional socioeconomic strain that directly shapes academic progression, device accessibility, and career security[cite: 6]. Primary data was captured via a structured, cross-sectional questionnaire consisting of 15 standardized items across three functional domains[cite: 6]:
+                </p>
+                <ul class="doc-list">
+                    <li><strong>Domain A: Academic & Employment Profile (3 items):</strong> Captures employment status (<code>work_status</code>), work motivation (<code>work_reason</code>), and primary institutional expectations (<code>education_improvement</code>)[cite: 6].</li>
+                    <li><strong>Domain B: Technological Infrastructure & Perceptions (6 items):</strong> Likert-scale features assessing internet cost burden (<code>internet_cost</code>), device access (<code>device_access</code>), salary importance (<code>salary_importance</code>), job security, career confidence, and degree relevance[cite: 6].</li>
+                    <li><strong>Domain C: Economic Distress Indicators (6 items):</strong> Direct financial anxiety measures including academic distraction, emergency job worry, financial compromises, missed opportunities, family pressure, and career strain[cite: 6].</li>
+                </ul>
+            </section>
+
+            <!-- Section 2: EPI Target Formulation & Zero-Leakage Protocol -->
+            <section class="card-container doc-section">
+                <h2>2. Target Construction (EPI) & Zero-Leakage Protocol</h2>
+                <p>
+                    The 6 Domain C variables were scored on an integer scale (0 to 3), summed, and normalized to generate the continuous <strong>Economic Pressure Index (EPI)</strong>[cite: 6]:
+                </p>
+                <div class="formula-box">
+                    <code>EPI = ( &sum; Item<sub>i</sub> / 18 ) &times; 100 &emsp; [i = 1 to 6]</code>
+                </div>
+                <p>
+                    Across the reference sample (N = 514), the continuous EPI yielded a mean of 60.07 (&plusmn;20.77), median of 61.11, and an IQR of 44.44 to 72.22[cite: 6]. To avoid subjective thresholding, the continuous index was discretized into three relative population tertiles[cite: 6]:
+                </p>
+                <div class="tertile-grid">
+                    <div class="tertile-card border-low">
+                        <span class="tertile-name">Low Pressure</span>
+                        <strong>0.00 &le; EPI &le; 55.56</strong>
+                        <span class="tertile-share">43.77% (N = 225)</span>
+                    </div>
+                    <div class="tertile-card border-mod">
+                        <span class="tertile-name">Moderate Pressure</span>
+                        <strong>55.56 &lt; EPI &le; 66.67</strong>
+                        <span class="tertile-share">31.71% (N = 163)</span>
+                    </div>
+                    <div class="tertile-card border-high">
+                        <span class="tertile-name">High Pressure</span>
+                        <strong>66.67 &lt; EPI &le; 100.00</strong>
+                        <span class="tertile-share">24.51% (N = 126)</span>
+                    </div>
+                </div>
+                <div class="callout-box">
+                    <strong>Methodological Safeguard Against Target Leakage:</strong>
+                    <p>To ensure empirical integrity, all 6 Domain C distress variables used to construct the EPI were permanently removed from the feature matrix (X)[cite: 6]. The model estimates relative vulnerability strictly through external academic, technological, and behavioral predictors[cite: 6].</p>
+                </div>
+            </section>
+
+            <!-- Section 3: Feature Selection & Experiments -->
+            <section class="card-container doc-section">
+                <h2>3. Feature Selection & Winning Predictor Set</h2>
+                <p>
+                    Statistical association tests (Pearson's &chi;<sup>2</sup> and Cram&eacute;r's V) combined with out-of-fold Permutation Importance identified four core predictors[cite: 6]:
+                </p>
+                <div class="table-wrapper">
+                    <table class="doc-table">
+                        <thead>
+                            <tr>
+                                <th>Predictor Variable</th>
+                                <th>Domain</th>
+                                <th>Chi-Square (&chi;<sup>2</sup>) p-value</th>
+                                <th>Cram&eacute;r's V</th>
+                                <th>Permutation Utility</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>internet_cost</code></td>
+                                <td>Tech Infrastructure</td>
+                                <td>4.2 &times; 10<sup>-14</sup></td>
+                                <td>0.270</td>
+                                <td>+0.0720</td>
+                            </tr>
+                            <tr>
+                                <td><code>device_access</code></td>
+                                <td>Tech Infrastructure</td>
+                                <td>5.4 &times; 10<sup>-13</sup></td>
+                                <td>0.260</td>
+                                <td>+0.0372</td>
+                            </tr>
+                            <tr>
+                                <td><code>education_improvement</code></td>
+                                <td>Institutional Expectation</td>
+                                <td>2.9 &times; 10<sup>-10</sup></td>
+                                <td>0.233</td>
+                                <td>Evaluated in Core Set</td>
+                            </tr>
+                            <tr>
+                                <td><code>work_reason</code></td>
+                                <td>Employment Motivation</td>
+                                <td>2.5 &times; 10<sup>-5</sup></td>
+                                <td>0.185</td>
+                                <td>+0.0195</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Section 4: Model Architecture & Leaf Diagnostics -->
+            <section class="card-container doc-section">
+                <h2>4. Constrained Model Architecture & Diagnostics</h2>
+                <p>
+                    A white-box Decision Tree (<code>criterion='entropy'</code>, <code>max_depth=4</code>, <code>min_samples_leaf=25</code>) was selected to provide transparent rule tracing without sacrificing predictive accuracy[cite: 6]. The minimum leaf constraint guarantees that every inferred rule represents at least 5% of the survey population (N &ge; 25)[cite: 6].
+                </p>
+                <div class="table-wrapper">
+                    <table class="doc-table">
+                        <thead>
+                            <tr>
+                                <th>Leaf ID</th>
+                                <th>Sample Support</th>
+                                <th>P(Low)</th>
+                                <th>P(Moderate)</th>
+                                <th>P(High)</th>
+                                <th>Decision Outcome</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Leaf 4</td>
+                                <td>N = 29 (5.6%)</td>
+                                <td>86%</td>
+                                <td>7%</td>
+                                <td>7%</td>
+                                <td>Low Pressure</td>
+                            </tr>
+                            <tr>
+                                <td>Leaf 5</td>
+                                <td>N = 27 (5.3%)</td>
+                                <td>78%</td>
+                                <td>19%</td>
+                                <td>4%</td>
+                                <td>Low Pressure</td>
+                            </tr>
+                            <tr>
+                                <td>Leaf 11</td>
+                                <td>N = 34 (6.6%)</td>
+                                <td>29%</td>
+                                <td>50%</td>
+                                <td>21%</td>
+                                <td>Moderate Pressure</td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td>Leaf 17</td>
+                                <td>N = 55 (10.7%)</td>
+                                <td>33%</td>
+                                <td>33%</td>
+                                <td>35%</td>
+                                <td>Borderline Uncertainty (Even Split)</td>
+                            </tr>
+                            <tr>
+                                <td>Leaf 22</td>
+                                <td>N = 56 (10.9%)</td>
+                                <td>14%</td>
+                                <td>20%</td>
+                                <td>66%</td>
+                                <td>High Pressure</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Section 5: Governance & Non-Diagnostic Positioning -->
+            <section class="card-container doc-section">
+                <h2>5. Responsible Governance & Privacy</h2>
+                <ul class="doc-list">
+                    <li><strong>Probabilistic Delivery:</strong> Hard classification boundaries can misrepresent borderline cases[cite: 6]. The frontend surfaces the full probability vector across all three tiers simultaneously[cite: 6].</li>
+                    <li><strong>Zero-Data Retention:</strong> Survey queries are evaluated entirely in memory over HTTPS and are discarded immediately after calculation[cite: 6]. No individual student records are logged or saved[cite: 6].</li>
+                    <li><strong>Non-Diagnostic Mandate:</strong> This system serves solely for institutional resource planning, equity audits, and pattern analysis[cite: 1, 6]. It is strictly prohibited from being used for clinical assessment or high-stakes gatekeeping[cite: 1, 6].</li>
+                </ul>
+            </section>
+
+        </main>
+
+        <!------------ FOOTER ------------>
+        <footer id="main-footer" class="main-footer">
+            <p class="footer-privacy">
+                <strong>Privacy & Governance:</strong> Zero-Data Storage policy in effect. No personal student data is logged, stored, or transferred to third-party databases[cite: 1, 6].
+            </p>
+            <div class="footer-links">
+                <a href="index.html">
+                    <svg class="footer-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    Return to Tool
+                </a>
+                <a href="https://github.com/saleemshahzad08/Student-Economic-Pressure-Map" target="_blank" rel="noopener noreferrer">
+                    <svg class="footer-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                    GitHub Repository
+                </a>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>
