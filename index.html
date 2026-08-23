@@ -38,6 +38,8 @@
 
         <main id="main-content">
 
+            <!------------ SURVEY SECTION ------------>
+
             <section id="survey-section" class="survey-card">
                 <h2>Student Socioeconomic Profile</h2>
                 <p>
@@ -91,6 +93,92 @@
 
                     <button id="submit-btn" type="submit">Generate Cohort Estimate</button>
                 </form>
+            </section>
+
+            <!------------ RESULTS SECTION ------------>
+
+            <section id="results-section" class="results-card" aria-live="polite" aria-atomic="true">
+
+                <h2>
+                    Cohort Vulnerability Estimate
+                </h2>
+                
+                <!------------ Primary Prediction Badge ------------>
+
+                <div class="primary-prediction-badge">
+                    <span class="badge-title">
+                        Estimated Category:
+                    </span>
+                    <strong id="predicted-category">
+                        Awaiting Input
+                    </strong>
+                </div>
+
+                <!------------ Probability Distribution Section ------------>
+
+                <div class="probability-distributions">
+                    <h3>Cohort Probability Distribution</h3>
+
+                    <!------------ Distribution Row-1 (For Low Pressure) ------------>
+
+                    <div class="distribution-item">
+                        <div class="distribution-label-row">
+                            <span>Low Pressure</span>
+                            <span id="prob-low-val">0%</span>
+                        </div>
+
+                        <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                            <div id="prob-low-fill" class="progress-fill fill-low"></div>
+                        </div>
+                    </div>
+
+                    <!------------ Distribution Row-2 (For Moderate Pressure) ------------>
+
+                    <div class="distribution-item">
+                        <div class="distribution-label-row">
+                            <span>Moderate Pressure</span>
+                            <span id="prob-mode-val">0%</span>
+                        </div>
+
+                        <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                            <div id="prob-mod-fill" class="progress-fill fill-mode"></div>
+                        </div>
+                    </div>
+
+                    <!------------ Distribution Row-3 (For High Pressure) ------------>
+
+                    <div class="distribution-item">
+                        <div class="distribution-label-row">
+                            <span>High Pressure</span>
+                            <span id="prob-high-val">0%</span>
+                        </div>
+
+                        <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                            <div id="prob-high-fill" class="progress-fill fill-high"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!------------ Uncertainty Alert Badge & Decision-Logic Accordion ------------>
+
+                <div id="uncertainty-badge" class="uncertainty-badge hidden" role="status">
+                    <span>&#x26A0;&#xFE0F;</span>
+                    <strong>Split-Decision Boundary Alert</strong>
+                    <p>The model detected closely competing probabilities across tiers (within a 5% margin). This indicates a profile exhibiting mixed characteristics where cohort vulnerability is borderline rather than definite.</p>
+                    <details id="explanation-accordion" class="explanation-accordion">
+                        <summary>Why this estimate? (View Decision-Logic Trace)</summary>
+                        <div class="accordion-content">
+                            <p id="rule-trace-text">
+                                Submit a profile to trace the exact decision path and feature interactions used by the model.
+                            </p>
+                            <p class="rule-footnote">
+                                Decision rules reflect aggregated cohort patterns from the training dataset and do not represent deterministic policy criteria.
+                            </p>
+                        </div>
+                        <button type="button" id="reset-btn" class="reset-btn">Test Another Profile</button>
+                    </details>
+                </div>
+
             </section>
         </main>
     </div>

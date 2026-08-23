@@ -147,6 +147,220 @@ select {
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
+.results-card {
+    background-color: #1E293B;
+    border: 1px solid darkcyan;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 24px;
+}
+
+.results-card h2 {
+    color: #F8FAFC;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.primary-prediction-badge {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #0F172A;
+    border: 1px solid #334155;
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 28px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.badge-title {
+    color: #94A3B8;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+#predicted-category {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #F8FAFC;
+    letter-spacing: -0.01em;
+}
+
+.primary-prediction-badge.tone-low {
+    border-color: #14B8A6;
+    background-color: rgba(20, 184, 166, 0.12);
+}
+
+.primary-prediction-badge.tone-mod {
+    border-color: #F59E0B;
+    background-color: rgba(245, 158, 11, 0.12);
+}
+
+.primary-prediction-badge.tone-high {
+    border-color: #EF4444;
+    background-color: rgba(239, 68, 68, 0.12);
+}
+
+.probability-distributions h3 {
+    color: #F8FAFC;
+    font-size: 1.1rem;
+    margin-top: 0;
+    margin-bottom: 18px;
+}
+
+.distribution-item {
+    margin-bottom: 18px;
+}
+
+.distribution-item:last-child {
+    margin-bottom: 0;
+}
+
+.distribution-label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #CBD5E1;
+    margin-bottom: 8px;
+}
+
+.progress-track {
+    width: 100%;
+    height: 16px;
+    background-color: #0F172A;
+    border-radius: 9999px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    border-radius: 9999px;
+    transition: width 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fill-low {
+    background-color: #14B8A6;
+}
+
+.fill-mod {
+    background-color: #F59E0B;
+}
+
+.fill-high {
+    background-color: #EF4444;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.uncertainty-badge {
+    background-color: rgba(245, 158, 11, 0.12);
+    border: 1px solid #F59E0B;
+    border-left: 4px solid #F59E0B;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    color: #FEF3C7;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.uncertainty-badge strong {
+    display: block;
+    color: #FBBF24;
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+}
+
+.uncertainty-badge p {
+    margin: 0;
+}
+
+.explanation-accordion {
+    background-color: #0F172A;
+    border: 1px solid #334155;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    transition: border-color 0.2s ease;
+}
+
+.explanation-accordion[open] {
+    border-color: #14B8A6;
+}
+
+.explanation-accordion summary {
+    cursor: pointer;
+    padding: 14px 18px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #14B8A6;
+    user-select: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.explanation-accordion summary:hover {
+    background-color: rgba(20, 184, 166, 0.08);
+}
+
+.accordion-content {
+    padding: 16px 18px;
+    border-top: 1px solid #334155;
+}
+
+#rule-trace-text {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: #E2E8F0;
+    background-color: #0B1120;
+    border: 1px solid #1E293B;
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.rule-footnote {
+    font-size: 0.8rem;
+    color: #64748B;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.reset-btn {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #94A3B8;
+    background-color: transparent;
+    border: 1px solid #475569;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.reset-btn:hover {
+    color: #F8FAFC;
+    border-color: #94A3B8;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.reset-btn:active {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(1px);
+}
+
 /* ------------------- FOR HANDLING RESPONSIVENESS ------------------- */
 
 /* Dark mode override */
