@@ -151,11 +151,11 @@
                     <div class="distribution-item">
                         <div class="distribution-label-row">
                             <span>Moderate Pressure</span>
-                            <span id="prob-mode-val">0%</span>
+                            <span id="prob-mod-val">0%</span>
                         </div>
 
                         <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-                            <div id="prob-mod-fill" class="progress-fill fill-mode"></div>
+                            <div id="prob-mod-fill" class="progress-fill fill-mod"></div>
                         </div>
                     </div>
 
@@ -179,19 +179,24 @@
                     <span>&#x26A0;&#xFE0F;</span>
                     <strong>Split-Decision Boundary Alert</strong>
                     <p>The model detected closely competing probabilities across tiers (within a 5% margin). This indicates a profile exhibiting mixed characteristics where cohort vulnerability is borderline rather than definite.</p>
-                    <details id="explanation-accordion" class="explanation-accordion">
-                        <summary>Why this estimate? (View Decision-Logic Trace)</summary>
-                        <div class="accordion-content">
-                            <p id="rule-trace-text">
-                                Submit a profile to trace the exact decision path and feature interactions used by the model.
-                            </p>
-                            <p class="rule-footnote">
-                                Decision rules reflect aggregated cohort patterns from the training dataset and do not represent deterministic policy criteria.
-                            </p>
-                        </div>
-                        <button type="button" id="reset-btn" class="reset-btn">Test Another Profile</button>
-                    </details>
                 </div>
+
+                <!------------ Collapsible Decision-Logic Accordion (Sibling to Badge) ------------>
+
+                <details id="explanation-accordion" class="explanation-accordion">
+                    <summary>Why this estimate? (View Decision-Logic Trace)</summary>
+                    <div class="accordion-content">
+                        <p id="rule-trace-text">
+                            Submit a profile to trace the exact decision path and feature interactions used by the model.
+                        </p>
+                        <p class="rule-footnote">
+                            Decision rules reflect aggregated cohort patterns from the training dataset and do not represent deterministic policy criteria.
+                        </p>
+                    </div>
+                </details>
+
+                <!------------ Scenario Reset Button (Sibling to Accordion) ------------>
+                <button type="button" id="reset-btn" class="reset-btn">Test Another Profile</button>
 
             </section>
         </main>
