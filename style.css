@@ -471,9 +471,10 @@ select {
 }
 
 .methodology-header h1 {
-    font-size: 2.1rem;
+    font-size: 2rem;
     line-height: 1.25;
-    color: #F8FAFC;
+    color: #1E293B;
+    text-align: center;
 }
 
 .doc-section {
