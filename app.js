@@ -32,6 +32,7 @@ const uncertaintyBadge = document.getElementById('uncertainty-badge');
 const ruleTraceText = document.getElementById('rule-trace-text');
 const resetBtn = document.getElementById('reset-btn');
 
+// Validate and Collect Profile Data
 form.addEventListener('submit', function(event) {
     event.preventDefault();
     const formData = {
@@ -48,3 +49,31 @@ form.addEventListener('submit', function(event) {
     }
     console.log('Submitting Profile:', formData)
 })
+
+// Timer reference holder
+let serverWakerTimer = null;
+
+// Centralized UI State Manager
+function toggleLoadingState(isLoading) {
+    if(isLoading) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Processing...";
+        loadingIndicator.classList.remove('hidden');
+        resultsSection.classList.add('hidden');
+
+        serverWakerTimer = setTimeout(() => {
+            coldStartNotice.classList.remove('hidden');
+        }, 2500);
+
+    } else {
+        clearTimeout(serverWakerTimer);
+        serverWakerTimer = null;
+
+        loadingIndicator.classList.add('hidden');
+        coldStartNotice.classList.add('hidden');
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Generate Cohort Estimate";
+    }
+}
+
+// Asynchronous API Handler
