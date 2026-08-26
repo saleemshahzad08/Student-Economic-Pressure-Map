@@ -2,7 +2,7 @@
 "use strict";
 
 // Base API Constant
-const API_BASE_URL = 'https://student-economic-pressure-api.onrender.com';
+const API_BASE_URL = 'http://127.0.0.1:8000';
 
 // Caching DOM Elements
 // 1. Form & Controls
