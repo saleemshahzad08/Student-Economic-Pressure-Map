@@ -14,6 +14,24 @@
 
 ---
 
+## 📑 Table of Contents
+
+- [1. Executive Overview](#1-executive-overview)
+- [2. Interactive System Architecture & High-Level Workflow](#2-interactive-system-architecture--high-level-workflow)
+- [3. The Model Development Journey (Research & Methodology)](#3-the-model-development-journey-research--methodology)
+  - [Phase 1: The Unsupervised Clustering Exploration & Its Abandonment](#phase-1-the-unsupervised-clustering-exploration--its-abandonment)
+  - [Phase 2: Mathematical Formulation of the Economic Pressure Index (EPI)](#phase-2-mathematical-formulation-of-the-economic-pressure-index-epi)
+  - [Phase 3: Statistical Predictor Analysis & Feature Reduction](#phase-3-statistical-predictor-analysis--feature-reduction)
+  - [Phase 4: Multi-Model Algorithmic Tournament](#phase-4-multi-model-algorithmic-tournament)
+- [4. Production Decision Logic, Leaf Registry & Explainability (XAI)](#4-production-decision-logic-leaf-registry--explainability-xai)
+- [5. Backend Architecture & API Contract Specifications](#5-backend-architecture--api-contract-specifications)
+- [6. Frontend Engineering & User Experience](#6-frontend-engineering--user-experience)
+- [7. Cloud Deployment & Cold-Start Latency Mitigation Runbook](#7-cloud-deployment--cold-start-latency-mitigation-runbook)
+- [8. Local Setup & Reproduction Guide](#8-local-setup--reproduction-guide)
+- [9. Ethics, Privacy & Responsible AI Statement](#9-ethics-privacy--responsible-ai-statement)
+
+---
+
 ## 1. Executive Overview
 
 Socioeconomic pressure among students is a classic **unobserved latent construct** — nobody can directly measure "financial stress," so it has to be inferred indirectly from proxy behaviors and attitudes. Two engineering risks follow from that:
