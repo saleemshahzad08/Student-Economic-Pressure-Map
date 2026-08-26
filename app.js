@@ -33,6 +33,21 @@ const uncertaintyBadge = document.getElementById('uncertainty-badge');
 const ruleTraceText = document.getElementById('rule-trace-text');
 const resetBtn = document.getElementById('reset-btn');
 
+// Pre-warming Frontend To Avoid Cold-Start on Render
+async function preWarmBackend() {
+  try {
+    await fetch(`${API_BASE_URL}/health`, {
+      method: "GET",
+      headers: { "Content-Type": "application/json" }
+    });
+    console.debug("Backend pre-warming ping successful.");
+  } catch (err) {
+    console.debug("Backend pre-warming ping dispatched.");
+  }
+}
+
+document.addEventListener("DOMContentLoaded", preWarmBackend);
+
 /// Timer reference holder
 let serverWakeTimer = null;
 
@@ -177,3 +192,4 @@ resetBtn.addEventListener('click', function(event) {
     resultsSection.classList.add('hidden');
     window.scrollTo({top: 0, behavior: 'smooth'});
 });
+
