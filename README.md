@@ -293,7 +293,7 @@ Given the sorted (descending) probability vector $P^{\downarrow} = [p_0^{\downar
 
 $$\text{margin} = p_0^{\downarrow} - p_1^{\downarrow}$$
 
-$$\text{is\_uncertain} = (\text{margin} \le 0.05) \ \lor \ (p_0^{\downarrow} < 0.45)$$
+$$\text{is_uncertain} = (\text{margin} \le 0.05) \ \lor \ (p_0^{\downarrow} < 0.45)$$
 
 A prediction is flagged as a **Split-Decision Boundary** whenever the top two class probabilities are within a 5-point margin of each other, *or* the leading probability itself fails to clear 45% — i.e. even an uncontested "winner" that's still weak gets flagged. Both the displayed percentages and the boolean flag are derived from the same rounded values in `main.py`, so the UI can never show numbers that visually contradict the uncertainty badge.
 
